@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--使用ajax完成这个页面的书写-->
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <!--导入相关依赖-->
+    <script src="../js/jquery-3.6.0.js"></script>
+    <link href="../css/bulma.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/shopping.css" rel="stylesheet">
+    <script src="../js/vue.js" ></script>
+    <script>
+        $(() => {
+            //设置鼠标点击事件,使得内容区中的盒子发生移动
+            $(".body li").on({ 
+                // 当鼠标路过时添加x
+                "mouseover": function () {
+                    $(this).addClass("x") 
+                }, 
+                //当鼠标移除时候删除x
+                "mouseout": function () {
+                    $(this).removeClass("x")
+                }
+            })
+
+            //获取ajax请求设置页面数据
+            $("#btn-ajaxId").click(function (){
+                $(function (){
+                    $.post("http://localhost:8080/caiyuhao2/ShoppingServlet?action=ajaxRequest",function (datas){
+                        alert(datas.name)
+                    },"json")
+                })
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn-ajaxId" class="button">点击获取ajax请求</button>
+    <!--布局-->
+    <div class="top-head">
+
+    </div>
+
+    <!-- 这里是滑动的导航栏 -->
+    <div class="sliding-navigation yt-center">
+
+    </div>
+    <!-- 滑动导航结束 -->
+
+    <!-- 这里是首页的推荐栏 -->
+    <div class="recommended-navigation yt-center">
+
+    </div>
+    <!-- 首页推荐结束 -->
+
+    <!-- 这里是商品的主页面 -->
+    <div class="body yt-center">
+        <div>
+            <ul>
+                <li style="height: 610px;">玄幻</li>
+                <li>
+                    <img src="../img/龙族封面.jpg" width="100px" height="auto" alt="">
+                    <br><a>龙族</a>
+                    <br><span style="color:#e74c3c;font-size:20px ;">幻想皇帝</span><a href=""></a>
+                    <br><a href="">江南</a><span>著</span>
+                    <br><span>最近信息：</span><a href="">只要五毛八</a>
+                    <br><i><span>时间：2021/11/3</span></i>
+                </li>
+                <li><a>九州缥缈录</a></li>
+                <li><a href="">我是蔡雨豪：重生，走向人生巅峰</a></li>
+                <li><a href="">大内总管</a></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li style="height: 614px;"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div></div>
+    </div>
+    <!-- 商品主页面结束 -->
+
+    <div class="ending"></div>
+</body>
+
+</html>

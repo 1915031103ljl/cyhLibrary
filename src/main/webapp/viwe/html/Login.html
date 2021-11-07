@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="../../icon/文件类型-Txt.png" type="image/x-icon" />
+<link rel="stylesheet" href="../css/bulma.css">
+<!--<link rel="stylesheet" href="../css/base.css">-->
+<link rel="stylesheet" href="../css/login.css">
+	<style>
+		.yt-left{
+			float: left;
+		}
+		.yt-right{
+			float: right;
+		}
+		.yt-margin-100px{
+			margin-right: 105px;
+		}
+		.yt-padding-50px{
+			padding-left: 50px;
+		}
+		.yt-center{
+			margin: 0 auto;
+			width: 990px;
+			text-align: center;
+		}
+
+	</style>
+	<base href="http://localhost:8080/caiyuhao2/">
+</head>
+<body>
+	<!-- 使用bulma组件库绘制登入页面 -->
+	<!--页面头部-->
+	<div class="yt-center top-head"></div>
+
+    <!--整个页面的中心-->
+	<div class="form-content yt-center ">
+		<div class="yt-left subject-left">
+			<!-- <img src="../img/原神大小姐.jpg" alt=""> -->
+		</div>
+
+		<!-- 登入框 -->
+		<div class="yt-left subject-right">
+			<form class="field form-right" action="UserServlet">
+				<input type="hidden" name="action" value="addUser">
+				<input type="hidden" name="actionType" value="registeredUser">
+				<!-- 用户名 -->
+				<label class="label">用户名</label>
+				<div class="control">
+				  <input class="input yt-input-import" name="user" type="text" placeholder="用户名">
+				</div>
+
+				<!-- 邮箱 -->
+				<label class="label">邮箱</label>
+				<div class="control">
+				  <input class="input yt-input-import" name="e-mail" type="email" placeholder="邮箱">
+				</div>
+
+				<!-- 密码 -->
+				<label class="label">请输入您的密码</label>
+				<div class="control">
+				  <input class="input yt-input-import" name="pass" type="password" placeholder="输入密码">
+				</div>
+
+				<!-- 再次输入 -->
+				<label class="label">请再次输入密码</label>
+				<div class="control">
+					<input class="input yt-input-import" type="password" placeholder="请再次输入密码">
+			  	</div>
+			  
+				<!-- 选择男女 -->
+				<div class="field is-horizontal verification-radio">
+					<div class="field-label">
+					  <label class="label">性别:</label>
+					</div>
+					<div class="field-body">
+					  <div class="field is-narrow">
+						<div class="control">
+						  <label class="radio">
+							<input type="radio" name="member">
+							<span style="color: #fff;">男</span>
+						  </label>
+						  <label class="radio">
+							<input type="radio" name="member">
+							<span style="color: #fff;">女</span>
+						  </label>
+						</div>
+					  </div>
+					</div>
+				</div>
+
+				  <!-- 验证码 -->
+				<div class="control verification-code">
+					<input class="input yt-left" type="password" placeholder="验证码">
+			  	</div>
+				  <br>
+				<input type="submit" class="button is-success yt-margin-100px">
+				<a href="http://localhost:8080/caiyuhao2/index.html" class="button  is-danger">返回</a>
+			</form>
+		</div>
+	</div>
+
+	<!--页面的末端-->
+	<div class="below">这里是表单的末尾，嘻嘻！</div>
+</body>
+</html>

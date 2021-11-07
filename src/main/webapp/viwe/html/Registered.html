@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../../lib/文件类型-Txt.png" type="image/x-icon" />
+	<script src="../js/"></script>
+	<title>Registered</title>
+	<script>
+		$(function(){
+			var pass = document.getElementById("pass")
+			var pass2 = document.getElementById("pass2")
+			$("#myform").submit(function(){
+				if(pass == pass2){
+					alert("两次密码不一致!")
+				}
+				return pass == pass2
+			})
+		})
+	</script>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/Registered.css">
+	<base href="http://localhost:8080/caiyuhao/">
+</head>
+
+<body>
+	<form action="RegisteredServlet?action=registered" method="post" id="myform">
+		<span>用户名：</span><input type="text" name="user"><br>
+		<span>密码：</span><input type="password" name="pass" id="pass"><br>
+		<span>请再次输入密码：</span><input type="password" name="pass2" id="pass2"><br>
+		<input type="submit" value="提交"><br>
+	</form>
+</body>
+
+</html>

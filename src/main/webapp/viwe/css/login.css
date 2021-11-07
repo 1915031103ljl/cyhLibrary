@@ -1,0 +1,52 @@
+body {
+    background-color: #c0d6cb;
+}
+.label{
+    color:#fff;
+}
+.top-head{
+    height: 160px;
+    color: #fff;
+    background: linear-gradient(to bottom, #00416A, #E4E5E6);
+    /* background-image: url("../img/"); */
+}
+.form-content{
+    height: 475px;
+    background: linear-gradient(to bottom, #000C40, #607D8B);
+}
+.below{
+    height:120px;
+    background-color: #e3dbbf;
+}
+.subject-left{
+    background-color: red;
+    width: 600px;
+    height: 100%;
+    background: linear-gradient(to bottom, #CC95C0, #DBD4B4, #7AA1D2);
+    background-image: url("../img/原神大小姐.jpg");
+    background-size: cover;
+}
+.subject-right{
+    width: 390px;
+    height: 450px;
+    padding-top: 25px;
+}
+
+
+.form-right{
+    position: relative;
+}
+.verification-code{
+    position: absolute;
+    width: 100px;
+    right: 20px;
+    bottom: 60px;
+}
+.verification-radio{
+    
+    margin-top: 30px;
+    
+}
+.form-right .yt-input-import{
+    width: 80%;
+}
