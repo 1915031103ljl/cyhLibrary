@@ -35,6 +35,7 @@
 %>
 <%--获取数据结束--%>
 <div class="top-hear">
+    <a href="http://localhost:8080/caiyuhao2/index.html"><-返回主页</a>
     <input class="add-user" type="button" onclick="addUser()" value="添加">
 </div>
 <%--数据表单开始--%>

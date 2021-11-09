@@ -36,13 +36,27 @@
 
         })
     </script>
+    <style>
+        .top-head{
+            position: relative;
+        }
+        .top-head a{
+            position: absolute;
+            margin-left: 10px;
+            right: 0;
+        }
+        .top-head .top-login{
+            bottom: 0;
+        }
+    </style>
 </head>
 
 <body>
     <button id="btn-ajaxId" class="button">点击获取ajax请求</button>
     <!--布局-->
     <div class="top-head">
-
+        <a class="top-login" href="">登入</a>
+        <a class="top-registered" href="">注册</a>
     </div>
 
     <!-- 这里是滑动的导航栏 -->
