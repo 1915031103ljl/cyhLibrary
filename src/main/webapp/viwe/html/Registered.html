@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="../../lib/文件类型-Txt.png" type="image/x-icon" />
-	<script src="../js/"></script>
+	<link rel="stylesheet" href="../css/bulma.css"/>
+	<script src="../js/jquery-3.6.0.js"></script>
 	<title>Registered</title>
 	<script>
 		$(function(){
@@ -25,6 +26,26 @@
 </head>
 
 <body>
+	<button id="btn-ajaxId" class="button">点击获取ajax请求</button>
+	<input id="输入" class="input" type="text" style="width: 100px;height: 20px;">
+	<span id="输出的地方" style="color: red"></span>
+	<script>
+		//判断输入框是否触发了Enter键位
+		$("#输入").bind('keypress',function (event){
+			if (event.keyCode == "13"){
+				//获取输入框里面的值
+				let name = $('#输入').val()
+				//使用get请求将值返回给服务器,datas是服务器返回的值
+				$.get("http://localhost:8080/caiyuhao2/ShoppingServlet?action=ajaxRequest&name="+name,function (datas){
+					if (datas == true){
+						$('#输出的地方').text("用户名可以使用")
+					}else {
+						$('#输出的地方').text("用户名不可")
+					}
+				},"json")
+			}
+		})
+	</script>
 	<form action="RegisteredServlet?action=registered" method="post" id="myform">
 		<span>用户名：</span><input type="text" name="user"><br>
 		<span>密码：</span><input type="password" name="pass" id="pass"><br>

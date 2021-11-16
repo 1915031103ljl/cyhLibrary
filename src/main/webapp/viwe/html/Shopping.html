@@ -9,7 +9,9 @@
     <script src="../js/jquery-3.6.0.js"></script>
     <link href="../css/bulma.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/甜品蛋糕10.png" type="image/x-icon" />
     <link href="../css/shopping.css" rel="stylesheet">
+    <script src="../js/shopping.js"></script>
     <script src="../js/vue.js" ></script>
     <script>
         $(() => {
@@ -24,7 +26,6 @@
                     $(this).removeClass("x")
                 }
             })
-
             //获取ajax请求设置页面数据
             $("#btn-ajaxId").click(function (){
                 $(function (){
@@ -37,31 +38,104 @@
         })
     </script>
     <style>
-        .top-head{
-            position: relative;
-        }
-        .top-head a{
-            position: absolute;
-            margin-left: 10px;
-            right: 0;
-        }
-        .top-head .top-login{
-            bottom: 0;
-        }
+
     </style>
 </head>
 
 <body>
-    <button id="btn-ajaxId" class="button">点击获取ajax请求</button>
     <!--布局-->
     <div class="top-head">
-        <a class="top-login" href="">登入</a>
-        <a class="top-registered" href="">注册</a>
+        <figure id="headP" class="image is-128x128">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+        </figure>
+        <a class="top-login" href="http://localhost:8080/caiyuhao2/index.html">登入</a>
+        <a class="top-registered" href="http://localhost:8080/caiyuhao2/viwe/html/Login.html">注册</a>
+        <input class="top-search input" type="text" placeholder="搜索你想看的小说">
+        <div class="top-queueing">
+            <a href="">我的书架</a>
+            <a href="">我的收藏</a>
+            <a href="">历史</a>
+            <a href="">主站</a>  
+        </div>
+        
     </div>
 
     <!-- 这里是滑动的导航栏 -->
     <div class="sliding-navigation yt-center">
 
+        <!-- 左导航 -->
+        <div class="sliding-navigation-left">
+            <ul>
+                <li><h1 class="title">书籍分类</h1></li>
+                <li><a href="">玄幻</a></li>
+                <li><a href="">狗血言情</a></li>
+                <li><a href="">武侠</a></li>
+                <li><a href="">幻想</a></li>
+                <li><a href="">轻小说</a></li>
+                <li><a href="">轻小说</a></li>
+                <li><a href="">轻小说</a></li>
+            </ul>
+        </div>
+
+        <!-- 中间内容区 -->
+        <div class="sliding-navigation-center">
+            <div class="sn-left">
+                <ul>
+                    <li><span>no1.</span><a>奥特曼</a></li>
+                    <li><span>no1.</span><a>奥特曼</a></li>
+                    <li><span>no1.</span><a>奥特曼</a></li>
+                    <li><span>no1.</span><a>奥特曼</a></li>
+                    <li><span>no1.</span><a>奥特曼</a></li>
+                    <li><span>no1.</span><a>奥特曼</a></li>
+                    <li><span>no1.</span><a>奥特曼</a></li>
+                    <li><span>no1.</span><a>奥特曼</a></li>
+                </ul>
+            </div>
+            <div class="sn-center">
+                <img src="../img/原神大小姐.jpg" alt="">
+                <!-- 这个是下面的小圆点 -->
+                <ul id="slave-big-miss">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <!-- 这个是左右下一个条目 -->
+                <i id="choose-left"><-</i>
+                <i id="choose-right">-></i>
+            </div>
+            <div class="sn-right">
+                <!-- <h1 id="today-heat-title">今日热度：</h1> -->
+                <!-- 左浮动图片 -->
+                <div class="yt-left">
+                    <h1 style="color: red" class="yt-title-left">今日热度:</h1>
+                    <img src="../img/龙族封面.jpg" style="width:80px" alt="">
+                </div>
+                <!-- 右浮动介绍 -->
+                <div class="yt-left heat-introduction">
+                    <p class="yt-title-left" style="color:#d3cbaf">推荐说明:</p>
+                    <h2 style="color: #87e8de;font-size: 15px">幻想的皇帝--龙族</h2>
+                    <p class="introduction yt-title-left">他那日君临天下,他那日踏平地球,他那日为了奥特曼变身龙王<br>他就是皇帝,就是当之无愧的霸主</p>
+                </div>
+            </div>
+        </div>
+
+        <!--右导航  -->
+        <div class="sliding-navigation-right">
+            <ul>
+                <li><h1 class="title">网文资讯</h1></li>
+                <li><span></span><a href="">震惊蔡雨豪震惊了世界</a></li>
+                <li><span></span><a href="">震惊蔡雨豪震惊了世界</a></li>
+                <li><span></span><a href="">震惊蔡雨豪震惊了世界</a></li>
+                <li><span></span><a href="">震惊蔡雨豪震惊了世界</a></li>
+                <li><span></span><a href="">震惊蔡雨豪震惊了世界</a></li>
+                <li><span></span><a href="">震惊蔡雨豪震惊了世界</a></li>
+            </ul>
+        </div>
     </div>
     <!-- 滑动导航结束 -->
 
@@ -73,13 +147,13 @@
 
     <!-- 这里是商品的主页面 -->
     <div class="body yt-center">
-        <div>
+        <div class="xuanHuan">
             <ul>
                 <li style="height: 610px;">玄幻</li>
                 <li>
                     <img src="../img/龙族封面.jpg" width="100px" height="auto" alt="">
                     <br><a>龙族</a>
-                    <br><span style="color:#e74c3c;font-size:20px ;">幻想皇帝</span><a href=""></a>
+                    <br><span style="color:#e74c3c;font-size:20px ;">幻想皇帝</span>
                     <br><a href="">江南</a><span>著</span>
                     <br><span>最近信息：</span><a href="">只要五毛八</a>
                     <br><i><span>时间：2021/11/3</span></i>

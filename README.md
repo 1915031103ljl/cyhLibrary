@@ -34,6 +34,11 @@ github地址:
 https://github.com/aiShuiJiaoDeXioShou/cyhLibrary.git
 ~~~
 
+### 4.在线帮助文档  
+JQ:
+~~~text
+https://jquery.cuishifeng.cn/jQuery.Ajax.html
+~~~
 ## 二.功能实现
 
 ### 1.书城登入功能

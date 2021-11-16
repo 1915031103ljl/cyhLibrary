@@ -3,6 +3,7 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/viwe/html/ajax-zsgc.html" value="file://$PROJECT_DIR$/src/main/webapp/viwe/html" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/viwe/html/自定义弹出框.jsp" value="file://$PROJECT_DIR$/src/main/webapp/viwe/html" />
       </map>
     </option>

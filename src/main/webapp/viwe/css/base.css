@@ -32,3 +32,16 @@ a{
 a:hover{
     color:#e74c3c;
 }
+/* 这里是毛玻璃特效 */
+.yt-frosted-glass{
+    background-color: rgb(0, 0, 0,0.7);
+}
+.yt-frosted-glass:hover{
+    background-color: rgb(0, 0, 0,0.5);
+}
+.yt-title-right{
+    text-align: right;
+}
+.yt-title-left{
+    text-align: left;
+}

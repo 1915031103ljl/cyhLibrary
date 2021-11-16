@@ -1,6 +1,9 @@
 package com.cyh.servlet;
 
+import com.cyh.dao.impl.BooksDaoImpl;
 import com.cyh.dao.impl.UserDao;
+import com.cyh.opring.ServletTools;
+import com.cyh.pjo.Books;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -15,11 +18,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/BaseSerlet")
 public abstract class BaseSerlet extends HttpServlet {
 	public UserDao userDao;
-	public Gson gson;
+	public BooksDaoImpl bookDao;
+	public static Gson gson;
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		userDao = new UserDao();
 		gson = new Gson();
+		bookDao = new BooksDaoImpl();
 		response.setContentType("text/html; charset=UTF-8");
 		String action = request.getParameter("action");
 		try {
