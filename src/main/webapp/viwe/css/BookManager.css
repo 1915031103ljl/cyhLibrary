@@ -1,0 +1,45 @@
+         #formData {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #formData th {
+            width: 100px;
+            height: auto;
+        }
+
+        #formData3 {
+            padding-top: 100px;
+            width: 200px;
+            height: 400px;
+            text-align: center;
+            margin-top: 200px;
+            position: absolute;
+            right: 50px;
+            top: 0;
+            background-clip: padding-box;
+            border: 10px rgba(255, 255, 255, .5) #0a0a0a;
+            box-shadow: 8px 8px 65px #0a0a0a;
+        }
+
+        .yt-bt {
+            margin-left: 10px;
+        }
+
+        #formData3 input[class=input] {
+            width: 100px;
+            height: 20px;
+        }
+
+        .dataUl input[class=button] {
+            width: 20px;
+            height: auto;
+        }
+
+        #show {
+            border: solid;
+        }
+
+        .ytqwe {
+            width: 500px;
+        }

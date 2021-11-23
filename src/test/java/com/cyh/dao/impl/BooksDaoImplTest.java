@@ -30,5 +30,10 @@ class BooksDaoImplTest {
         booksDao.addBook(new Books(4,"雪中悍刀行","大内总管","武侠","xx钢大败xx","D:\\ytjava\\ideayt\\cyhLibrary\\src\\main\\webapp\\icon\\首页.png"));
         booksDao.updateBookCover(new Books(1,"D:\\ytjava\\ideayt\\cyhLibrary\\src\\main\\webapp\\icon\\首页.png"));
     }
+    @Test
+    public void update(){
+        BooksDaoImpl booksDao = new BooksDaoImpl();
+        booksDao.upOneBook(new Books(5,"闺蜜","迪迦","123",null,null));
+    }
 
 }

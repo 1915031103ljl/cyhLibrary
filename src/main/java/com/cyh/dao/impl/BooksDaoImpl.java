@@ -2,6 +2,7 @@ package com.cyh.dao.impl;
 
 import com.cyh.dao.BaseDao;
 import com.cyh.dao.JdbcUtils;
+import com.cyh.dao.PageList;
 import com.cyh.pjo.Books;
 
 import java.io.*;
@@ -10,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 
-public class BooksDaoImpl extends BaseDao {
+public class BooksDaoImpl extends BaseDao implements PageList<Books> {
     //判断一本书籍是否存在
     public Number ifOneBook(int id){
         return (Number) queryForSingleValue("SELECT COUNT(*) FROM `books_table` WHERE `id`=?",id);
@@ -156,5 +157,15 @@ public class BooksDaoImpl extends BaseDao {
      */
     public Number getSumUser(){
         return (Number) queryForSingleValue("SELECT COUNT(*) FROM `books_table`");
+    }
+
+    @Override
+    public int sumPage() {
+        return Integer.parseInt((Number) queryForSingleValue("SELECT COUNT(*) FROM `books_table`")+"");
+    }
+
+    @Override
+    public List<Books> listPage(int start, int end) {
+        return queryForList(Books.class, "SELECT `id`,`name`,author,category,descriptor,final_descriptor As finalDescriptor,book_cover AS bookCover FROM `books_table` LIMIT ?,?",start,end);
     }
 }

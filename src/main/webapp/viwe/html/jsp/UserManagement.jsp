@@ -43,7 +43,7 @@
     <div class="body-left">
         <ul>
             <li>用户账户管理</li>
-            <li>书籍信息管理</li>
+            <li><a style="color: white" href="http://localhost:8080/caiyuhao2/viwe/html/BookManagementPage.html">书籍信息管理</a></li>
             <li>网站管理</li>
         </ul>
     </div>

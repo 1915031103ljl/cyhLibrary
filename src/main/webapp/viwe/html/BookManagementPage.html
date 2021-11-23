@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理页面</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/vue.js"></script>
+    <link href="../css/bulma.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/BookManager.css" rel="stylesheet">
+    <script src="../js/BookManager.js"></script>
+    <base href="http://localhost:8080/caiyuhao2/">
+</head>
+
+<body>
+    <!-- 每日热度的地方 -->
+    <div class="card ytqwe">
+        <button class="button" id="show">显示</button>
+        <div class="card-content">
+            <div id="dataHtml" v-html="html" class="content">
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el:"#dataHtml",
+            data() {
+                return {
+                    html:`<h1>你是一只猪猪饺子</h1>`,
+                }
+            },
+        })
+    </script>
+
+    <!-- 数据表单的主体 -->
+    <table border="1" id="formData" class="yt-left yt-padding-10px">
+        <tr>
+            <th>id</th>
+            <th>书名</th>
+            <th>作者</th>
+            <th>描述</th>
+            <th>管理员操作</th>
+        </tr>
+    </table>
+    <ul id="bottom-navigation">
+        <li class="button" onclick="prePage()">上一页</li>
+        <li class="button" onclick="indexPage(1)">1</li>
+        <li class="button" onclick="indexPage(2)">2</li>
+        <li class="button" onclick="indexPage(3)">3</li>
+        <li class="button" onclick="indexPage(4)">4</li>
+        <li class="button" onclick="indexPage(5)">5</li>
+        <li class="button" onclick="indexPage(6)">6</li>
+        <li class="button" onclick="indexPage(sumPage)">末尾</li>
+        <li class="button" onclick="nextPage()">下一页</li>
+    </ul>
+    <!-- 这里是管理员所填写的表单 -->
+    <div id="formData3">
+        <input name="action" type="hidden" value="add" />
+        <label class="" for="inputDataId">id：</label><input class="input" id="inputDataId" name="id" type="text"
+            value="" /><br><br>
+        <label class="" for="inputDataName">名字：</label><input class="input" id="inputDataName" name="name" type="text"
+            value="" /><br><br>
+        <label class="" for="inputDataAuthor">作者：</label><input class="input" id="inputDataAuthor" name="author"
+            type="text" value="" /><br><br>
+        <label class="" for="inputDataCategory">描述：</label><input class="input" id="inputDataCategory" name="category"
+            type="text" value="" /><br><br>
+        <input class="button" onclick="submit()" type="button" value="提交" />
+        <input class="button" onclick="Return()" type="button" value="返回" />
+    </div>
+
+    <!-- 对话框 -->
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">您确定要删除这个模块吗？</p>
+                <button aria-label="close" class="delete" onclick="delDiv()"></button>
+            </header>
+            <section class="modal-card-body">
+
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-danger" id="card-del">确定删除</button>
+                <button class="button" id="card-cancel" onclick="delDiv()">返回</button>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

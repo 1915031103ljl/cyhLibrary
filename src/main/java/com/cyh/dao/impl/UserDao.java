@@ -3,9 +3,10 @@ package com.cyh.dao.impl;
 import java.util.List;
 
 import com.cyh.dao.BaseDao;
+import com.cyh.dao.PageList;
 import com.cyh.pjo.User;
 
-public class UserDao extends BaseDao{
+public class UserDao extends BaseDao implements PageList<User> {
 	public User getUser(int id) {
 		return queryOneData(User.class, "select * from `user_table` where `id` = ?", id);
 	}
@@ -28,4 +29,14 @@ public class UserDao extends BaseDao{
 		return (Number) queryForSingleValue("SELECT COUNT(*) FROM `user_table`");
 	}
 
+	@Override
+	public int sumPage() {
+		Number number = (Number) queryForSingleValue("SELECT COUNT(*) FROM `user_table`");
+		return Integer.parseInt(number+"");
+	}
+
+	@Override
+	public List<User> listPage(int start, int end) {
+		return queryForList(User.class, "SELECT * FROM `user_table` LIMIT ?,?",start,end);
+	}
 }
